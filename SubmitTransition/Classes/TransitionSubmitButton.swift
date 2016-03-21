@@ -10,7 +10,7 @@ public class TKTransitionSubmitButton : UIButton, UIViewControllerTransitioningD
         return s
     }()
     
-    @IBInspectable public var spinnerColor: UIColor = UIColor.whiteColor() {
+    @IBInspectable var spinnerColor: UIColor = UIColor.whiteColor() {
         didSet {
             spiner.spinnerColor = spinnerColor
         }
@@ -78,7 +78,7 @@ public class TKTransitionSubmitButton : UIButton, UIViewControllerTransitioningD
         self.spiner.stopAnimation()
     }
     
-    public override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
+    public override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
         let a = anim as! CABasicAnimation
         if a.keyPath == "transform.scale" {
             didEndFinishAnimation?()
